@@ -1,0 +1,17 @@
+# For details & more options, see documentation/AppManifests.md in firmware repo
+
+App(
+    appid="dmx_tool",
+    name="DMX Tool",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="dmx_tool_app",
+    stack_size=2 * 1024,
+    requires=["gui", "storage"],
+    targets=["f7"],
+    fap_category="GPIO",
+    fap_version="0.5.0",
+    fap_icon="dmx_tool.png",
+    fap_description="Portable DMX sender, receiver and analyzer",
+    fap_author="IllumiNocte",
+    fap_weburl="https://github.com/IllumiNocte/flipper-zero-dmx-tool",
+)

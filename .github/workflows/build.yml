@@ -1,0 +1,25 @@
+name: "FAP: Build for Unleashed 090"
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ufbt-build:
+    runs-on: ubuntu-latest
+    name: "uFBT: Unleashed 090 / API 88.2"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build with uFBT
+        uses: flipperdevices/flipperzero-ufbt-action@v0.1
+        id: build-app
+        with:
+          sdk-url: https://github.com/DarkFlippers/unleashed-firmware/releases/download/unlshd-090/flipper-z-f7-sdk-unlshd-090.zip
+          sdk-hw-target: f7
+      - name: Upload FAP
+        uses: actions/upload-artifact@v4
+        with:
+          name: dmx-tool-unleashed-090
+          path: ${{ steps.build-app.outputs.fap-artifacts }}
+

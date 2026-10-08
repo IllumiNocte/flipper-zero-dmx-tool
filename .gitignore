@@ -1,0 +1,9 @@
+.ufbt/
+.venv/
+.vscode/
+build/
+dist/
+*.fap
+*.elf
+*.map
+
